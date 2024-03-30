@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<main class="cd__main">
+  <div class="profile-page">
+    <div class="content">
+
+
+      <div class="content__title">
+        <h1>{{currentProduct.name}}</h1>
+        <span>{{currentProduct.description}}</span>
+      </div>
+      <div class="content__description">
+        <p>Price:&nbsp;&nbsp;{{currentProduct.price}}</p>
+        <p>Creation date:&nbsp;&nbsp;{{currentProduct.dateCreate | date : "dd-MM-yyyy"}}</p>
+        <p>Category:&nbsp;&nbsp;{{currentProduct.category?.category}}</p>
+      </div>
+      <div class="content__button">
+        <a class="button" href="productList"><p class="button__text">Go Back</p></a>
+      </div>
+    </div>
+
+
+  </div>
+</main>
+<app-footer></app-footer>

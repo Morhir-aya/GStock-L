@@ -1,0 +1,86 @@
+i{
+    color: white;
+}
+
+.custom-table{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 200%;
+}
+.head{
+    background-color: black;
+}
+
+.bedit {
+    margin-left: 8px;
+    color: white;
+    background-color: blue;
+    border-color: blue;
+    border-radius: 20%;
+}
+
+.bedit:hover {
+    background-color: rgb(79, 79, 250);
+    border-color: rgb(79, 79, 250);
+}
+
+.bdelete {
+    color: white;
+    background-color: red;
+    border-color: red;
+    border-radius: 20%;
+}
+
+.bdelete:hover {
+    background-color: rgb(251, 122, 122);
+    border-color: rgb(251, 122, 122);
+}
+
+.badd {
+    color: white;
+    background-color: green;
+    border-color: green;
+    border-radius: 20%;
+}
+
+.badd:hover {
+    background-color: rgb(68, 127, 68);
+    border-color: rgb(68, 127, 68);
+}
+
+.title{
+ color: rgb(118, 123, 118);
+ text-align: center;
+ font-weight: bold;
+}
+.bdetail {
+    color: white;
+    background-color: green;
+    border-color: green;
+    border-radius: 20%;
+}
+
+.bdetail:hover {
+    background-color: rgb(68, 127, 68);
+    border-color: rgb(68, 127, 68);
+}
+
+.bdownload{
+    color: white;
+    margin-left: 15%;
+    width: 12%;
+    height: 15%;
+  }
+  /*---Searchbar styles---*/
+  .searchInput{
+    margin-left: 60%;
+    margin-top: -2%;
+  }
+  
+  .searchButton{
+    color: white;
+    background-color: gray;
+    border-color: rgb(174, 174, 174);
+    border-radius: 5%;
+    width: 5%;
+  }

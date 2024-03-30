@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<br><br><br>
+
+<section class="hero-section">
+    <form class="form">
+        <p class="title">Add Product</p>
+
+
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+
+            [(ngModel)]="newProduct.name"
+                   name="productName"
+            />
+            <span>Name</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="number" class="input"
+                   [(ngModel)]="newProduct.price"
+                   name="productPrice"
+            />
+            <span>Price</span>
+        </label>
+
+        <label>
+            <span>Creation date</span>
+            <input required="" placeholder="" type="date" class="input"
+                   [(ngModel)]="newProduct.dateCreate"
+                   name="date"
+            />
+        </label>
+
+      <label>
+        <input required="" placeholder="" type="text" class="input"
+
+               [(ngModel)]="newProduct.description"
+               name="description"
+        />
+        <span>Description</span>
+      </label>
+
+        <label for="status">
+            <span>Category</span>
+            <select id="status" name="status" id="idCategory" name="idCategory" [(ngModel)]="newCategoryId">
+                <option *ngFor="let category of categories" [value]="category.idCategory">
+                  {{category.category}}
+                </option>
+            </select>
+        </label>
+
+
+        <button class="submit" type="submit" (click)="addProduct()">Add</button>
+    </form>
+</section>
+<app-footer></app-footer>

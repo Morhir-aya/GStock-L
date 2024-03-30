@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<br><br><br>
+
+<section class="hero-section">
+    <form class="form">
+        <p class="title">Edit Product </p>
+
+
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+                   [(ngModel)]="currentCategory.category"
+                   name="productName"/>
+            <span>Name</span>
+        </label>
+
+        <button class="submit" (click)="updateCategory()">Save</button>
+    </form>
+</section>
+<app-footer></app-footer>

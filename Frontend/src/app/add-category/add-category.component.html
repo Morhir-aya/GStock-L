@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<br><br><br>
+
+<section class="hero-section">
+    <form class="form">
+        <p class="title">Add Category</p>
+
+
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+
+                   [(ngModel)]="newCategorie.category"
+                   name="categoryName"
+            />
+            <span>Name</span>
+        </label>
+
+
+        <button class="submit" type="submit" (click)="addCategory()">Add</button>
+    </form>
+</section>
+<app-footer></app-footer>

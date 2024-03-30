@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<br><br><br><br><br><br>
+<h1 class="title">Categories List</h1>
+<br><br><br>
+<!--
+    <div class="alert alert-danger" role="alert"><strong>Info!</strong> Add row and Delete row are working. Edit row displays modal with row cells information.</div>
+-->
+<!--search bar-->
+<div class="form-container">
+    <form role="search">
+      <input class="form-control w-25 searchInput" id="searchKey" type="search"
+             #searchkeyword
+             (keyup)="searchByKeyword(searchkeyword.value)"
+             placeholder="Search..."
+             name="searchKey"
+             autofocus required />
+    </form>
+  </div>
+
+<!--search bar-->
+<br>
+<!--Product List-->
+<table class="table table-striped table-bordered custom-table" style="border-radius: 20px;">
+    <thead class="table-dark ">
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th style="text-align:center;width:100px;">Add &nbsp;
+              <button type="button" class="badd" [routerLink]="['/addCategory']">
+                    <i class="fa-solid fa-plus"></i>
+                </button></th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let category of categories">
+            <td>{{category.idCategory}}</td>
+            <td>{{category.category}}</td>
+            <td style="width: 11%;">
+                <button class="bedit" type="button" [routerLink]="['/editCategory', category.idCategory]">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                </button>&nbsp;
+                <button class="bdelete" type="button" (click)="deleteCategory(category)">
+                    <i class="fa-solid fa-eraser"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--Product List-->
+<br><br><br><br><br><br>
+<app-footer></app-footer>

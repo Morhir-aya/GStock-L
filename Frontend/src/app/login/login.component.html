@@ -1,0 +1,24 @@
+
+<app-navbar></app-navbar>
+<br><br><br>
+
+<section class="hero-section">
+    <form class="form" (ngSubmit)="login()">
+        <p class="title">Login </p>
+      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+      <label>
+            <input required="" placeholder="" type="text" class="input" [(ngModel)]="credentials.username" name="username">
+            <span>Username</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="password" class="input" [(ngModel)]="credentials.password" name="password">
+            <span>Password</span>
+        </label>
+
+        <button class="submit">LogIn</button>
+        <p class="signin">Dont have an account ? <a href="signin-page">SignUp</a> </p>
+    </form>
+</section>
+<app-footer></app-footer>

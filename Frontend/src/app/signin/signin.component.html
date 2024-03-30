@@ -1,0 +1,29 @@
+
+<app-navbar></app-navbar>
+<br><br><br>
+
+<section class="hero-section">
+  <form class="form" (ngSubmit)="register()">
+    <p class="title">Register </p>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="user.username" name="username">
+      <span>Username</span>
+    </label>
+
+
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="user.email" name="email">
+      <span>Email</span>
+    </label>
+
+    <label>
+      <input required="" placeholder="" type="password" class="input" [(ngModel)]="user.password" name="password">
+      <span>Password</span>
+    </label>
+
+    <button class="submit">Register</button>
+    <p class="signin">You already have an account ? <a href="login-page">Login</a> </p>
+  </form>
+</section>
+<app-footer></app-footer>

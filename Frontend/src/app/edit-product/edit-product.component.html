@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<br><br><br>
+
+<section class="hero-section">
+    <form class="form">
+        <p class="title">Edit Product </p>
+
+
+        <label>
+            <input required="" placeholder="" type="text" class="input"
+                   [(ngModel)]="currentProduct.name"
+                   name="productName"/>
+            <span>Name</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="number" class="input"
+                   [(ngModel)]="currentProduct.price"
+                   name="price"/>
+
+            <span>Price</span>
+        </label>
+
+        <label>
+            <span>Creation date</span>
+            <input required="" placeholder="" type="date" class="input"
+                   [(ngModel)]="currentProduct.dateCreate"
+                   name="date"/>
+
+
+        </label>
+
+      <label>
+        <input required="" placeholder="" type="text" class="input"
+
+               [(ngModel)]="currentProduct.description"
+               name="description"
+        />
+        <span>Description</span>
+      </label>
+
+      <label for="status">
+        <span>Category</span>
+        <select id="status" name="status" id="idCategory" name="idCategory" [(ngModel)]="newCategoryId">
+          <option *ngFor="let category of categories" [value]="category.idCategory">
+            {{category.category}}
+          </option>
+        </select>
+      </label>
+
+
+        <button class="submit" (click)="updateProduct()">Save</button>
+    </form>
+</section>
+<app-footer></app-footer>
