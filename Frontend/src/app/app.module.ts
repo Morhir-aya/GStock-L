@@ -19,6 +19,8 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import {QRCodeModule} from "angularx-qrcode";
 import { SigninComponent } from './signin/signin.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SigninComponent } from './signin/signin.component';
     CategoryListComponent,
     AddCategoryComponent,
     EditCategoryComponent,
-    SigninComponent
+    SigninComponent,
+    EditUserComponent,
+    Navbar2Component
   ],
   imports: [
     BrowserModule,

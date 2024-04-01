@@ -2,20 +2,19 @@
 
 <main class="cd__main">
     <div class="profile-page">
-        <div class="content">
+        <div class="content" *ngIf="userInfo">
 
 
             <div class="content__title">
-                <h1>Samantha Jones</h1>
-                <span>New York, United States</span>
+                <h1>{{userInfo.username}}</h1>
+                <span>Full Name: {{userInfo.fullName}}</span>
             </div>
             <div class="content__description">
-                <p>Email: ex&#64;gmail.com</p>
-                <p>Phone: 0202020202</p>
-                <p>Password: SCD12c4</p>
+                <p>Email: {{userInfo.email}}</p>
+                <p>Phone: {{userInfo.phone}}&nbsp;&nbsp;</p>
             </div>
             <div class="content__button">
-                <a class="button" href="#"><p class="button__text">Edit</p></a>
+                <a class="button" href="editUser"><p class="button__text">Edit</p></a>
             </div>
         </div>
 

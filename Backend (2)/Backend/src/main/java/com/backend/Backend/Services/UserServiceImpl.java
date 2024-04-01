@@ -27,4 +27,30 @@ public class UserServiceImpl implements UserService{
         return null; // or throw an exception indicating invalid credentials
     }
 
+    public User updateProfile(User updatedUser) {
+        // Fetch the existing user from the database
+        User existingUser = userRepository.findById(updatedUser.getId()).orElse(null);
+
+        if (existingUser != null) {
+            existingUser.setUsername(updatedUser.getUsername());
+            existingUser.setEmail(updatedUser.getEmail());
+            existingUser.setFullName(updatedUser.getFullName());
+            existingUser.setPhone(updatedUser.getPhone());
+            existingUser.setPassword(updatedUser.getPassword());
+            return userRepository.save(existingUser);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        return userRepository.findById(id).get();
+    }
+
 }

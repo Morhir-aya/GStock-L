@@ -1,0 +1,36 @@
+
+<app-navbar></app-navbar>
+<br><br><br>
+
+<section class="hero-section">
+  <form class="form" *ngIf="currentUser">
+    <p class="title">Update User </p>
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="currentUser.username"name="username">
+      <span>Username</span>
+    </label>
+
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="currentUser.fullName" name="fullName">
+      <span>Full Name</span>
+    </label>
+
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="currentUser.email" name="email">
+      <span>Email</span>
+    </label>
+
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="currentUser.phone" name="phone">
+      <span>Phone number</span>
+    </label>
+
+    <label>
+      <input required="" placeholder="" type="password" class="input" [(ngModel)]="currentUser.password" name="password">
+      <span>Password</span>
+    </label>
+
+    <button class="submit" (click)="updateUser()">Update</button>
+  </form>
+</section>
+<app-footer></app-footer>

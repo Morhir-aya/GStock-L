@@ -1,5 +1,5 @@
 
-<app-navbar></app-navbar>
+<app-navbar2></app-navbar2>
 <br><br><br>
 
 <section class="hero-section">
@@ -11,10 +11,19 @@
       <span>Username</span>
     </label>
 
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="user.fullName" name="fullName">
+      <span>Full Name</span>
+    </label>
 
     <label>
       <input required="" placeholder="" type="text" class="input" [(ngModel)]="user.email" name="email">
       <span>Email</span>
+    </label>
+
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="user.phone" name="phone">
+      <span>Phone number</span>
     </label>
 
     <label>

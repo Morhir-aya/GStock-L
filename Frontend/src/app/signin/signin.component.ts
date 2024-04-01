@@ -11,7 +11,10 @@ export class SigninComponent {
   user = {
     username: '',
     email: '',
-    password: ''
+    password: '',
+    fullName: '',
+    phone: '',
+
   };
   errorMessage: string | null = null;
 
