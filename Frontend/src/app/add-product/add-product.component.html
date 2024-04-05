@@ -15,7 +15,16 @@
             <span>Name</span>
         </label>
 
-        <label>
+      <label>
+        <input required="" placeholder="" type="number" class="input"
+               [(ngModel)]="newProduct.amount"
+               name="amount"
+        />
+        <span>Quantity</span>
+      </label>
+
+
+      <label>
             <input required="" placeholder="" type="number" class="input"
                    [(ngModel)]="newProduct.price"
                    name="productPrice"

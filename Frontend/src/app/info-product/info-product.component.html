@@ -10,6 +10,7 @@
         <span>{{currentProduct.description}}</span>
       </div>
       <div class="content__description">
+        <p>Quantity:&nbsp;&nbsp;{{currentProduct.amount}}</p>
         <p>Price:&nbsp;&nbsp;{{currentProduct.price}}</p>
         <p>Creation date:&nbsp;&nbsp;{{currentProduct.dateCreate | date : "dd-MM-yyyy"}}</p>
         <p>Category:&nbsp;&nbsp;{{currentProduct.category?.category}}</p>

@@ -1,10 +1,18 @@
 <app-navbar></app-navbar>
 <br><br><br><br><br><br>
-<h1 class="title">Products List</h1>
+<h1 class="title">PRODUCT LIST</h1>
 <br><br><br>
 <!--
     <div class="alert alert-danger" role="alert"><strong>Info!</strong> Add row and Delete row are working. Edit row displays modal with row cells information.</div>
 -->
+
+<div *ngIf="lowQuantityProducts.length > 0" class="alert alert-danger custom" role="alert">
+  Warning: The following products have quantities less than 5:
+  <ul>
+    <li *ngFor="let product of lowQuantityProducts">{{ product.name }}</li>
+  </ul>
+</div>
+<br>
 
 <!--search bar-->
 <div class="form-container">
@@ -27,6 +35,7 @@
         <tr style="text-align:center;">
             <th>ID</th>
             <th>Product Name</th>
+            <th>Product Quantity</th>
             <th>Price</th>
             <th>Creation date</th>
             <th>Category</th>
@@ -39,9 +48,15 @@
         </tr>
     </thead>
     <tbody class="table-group-divider" style="text-align:center;">
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products" >
             <td>{{product.id}}</td>
             <td>{{product.name}}</td>
+            <td>
+              <i class="fa-solid fa-minus" (click)="decrementAmount(product)" style="color: black;"></i>&nbsp;&nbsp;
+              {{product.amount}}&nbsp;&nbsp;
+              <i class="fa-solid fa-plus" (click)="incrementAmount(product)" style="color: black;"></i>
+            </td>
+
             <td>{{product.price}}</td>
             <td>{{product.dateCreate | date : "dd-MM-yyyy"}}</td>
             <td>{{product.category?.category}}</td>

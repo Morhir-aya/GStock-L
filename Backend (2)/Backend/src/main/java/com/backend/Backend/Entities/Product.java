@@ -90,5 +90,13 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    public void incrementAmount() { this.amount++; }
+
+    public void decrementAmount() {
+        if (this.amount > 0) {
+            this.amount--;
+        }
+    }
 }
 

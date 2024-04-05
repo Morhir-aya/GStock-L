@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Product} from "./product";
 import {Category} from "../category/category";
+import {Observable} from "rxjs";
 
 const httpOptions = {
   headers : new HttpHeaders({
@@ -45,4 +46,18 @@ export class ProductService  {
   updateProduct(product : Product){
     return this.http.put<Product>(this.apiURL+"/products/update", product, httpOptions);
   }
+
+  incrementProductAmount(productId: number): Observable<Product> {
+    return this.http.put<Product>(`${this.apiURL}/products/increment/${productId}`, {}, httpOptions);
+  }
+
+  decrementProductAmount(productId: number): Observable<Product> {
+    return this.http.put<Product>(`${this.apiURL}/products/decrement/${productId}`, {}, httpOptions);
+  }
+
+  getLowQuantityProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiURL+'/products/low-quantity');
+  }
+
+
 }

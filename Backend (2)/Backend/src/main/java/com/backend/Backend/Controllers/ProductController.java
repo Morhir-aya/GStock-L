@@ -3,6 +3,7 @@ package com.backend.Backend.Controllers;
 import com.backend.Backend.Entities.Product;
 import com.backend.Backend.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -42,6 +43,21 @@ public class ProductController {
         productService.deleteProductById(idProduct);
     }
 
+    @PutMapping("/products/increment/{idProduct}")
+    public Product incrementProductAmount(@PathVariable("idProduct") Long idProduct){
+        return productService.incrementProductAmount(idProduct);
+    }
+
+    @PutMapping("/products/decrement/{idProduct}")
+    public Product decrementProductAmount(@PathVariable("idProduct") Long idProduct){
+        return productService.decrementProductAmount(idProduct);
+    }
+
+    @GetMapping("/products/low-quantity")
+    public ResponseEntity<List<Product>> getProductsLowQuantity() {
+        List<Product> lowQuantityProducts = productService.getProductsLowQuantity();
+        return ResponseEntity.ok(lowQuantityProducts);
+    }
 
 
 }

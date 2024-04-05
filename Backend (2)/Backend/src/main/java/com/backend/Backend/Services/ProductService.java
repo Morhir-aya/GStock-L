@@ -25,4 +25,8 @@ public interface ProductService {
     List<Product> findAllProductsByNameSort();
 
     Page<Product> getAllProductsByPage(int page, int size);
+
+    public Product incrementProductAmount(Long productId);
+    public Product decrementProductAmount(Long productId);
+    public List<Product> getProductsLowQuantity();
 }

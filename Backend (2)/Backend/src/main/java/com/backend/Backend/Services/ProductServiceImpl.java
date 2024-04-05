@@ -78,4 +78,20 @@ public class ProductServiceImpl implements ProductService{
     public Page<Product> getAllProductsByPage(int page, int size) {
         return productRepository.findAll(PageRequest.of(page, size));
     }
+
+    public Product incrementProductAmount(Long productId) {
+        Product product = getProductById(productId);
+        product.incrementAmount();
+        return saveProduct(product);
+    }
+
+    public Product decrementProductAmount(Long productId) {
+        Product product = getProductById(productId);
+        product.decrementAmount();
+        return saveProduct(product);
+    }
+
+    public List<Product> getProductsLowQuantity() {
+        return productRepository.findByAmountLessThan(6);
+    }
 }
